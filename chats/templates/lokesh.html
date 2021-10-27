@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to lokesh page</h1>
+    <h2>{{data}}</h2>
+    {% if data == 'login' %}
+    <h1>welcome to login page</h1>
+    <label>username</label><input type="text" name="username" id="id_username">
+    <label>firstname</label><input type="text" name="firstname" id="id_firstname">
+    <input type="submit">
+
+    {% elif data == 'register' %}
+
+    <h1>welcome to register page</h1>
+    <div>
+    <label>username</label><input type="text" name="username" id="id_username">
+    <label>firstname</label><input type="text" name="firstname" id="id_firstname">
+    <label>password</label><input type="password" name="password" id="id_password">
+    <label>email</label><input type="email" name="email" id="id_email">
+    <label>phone</label><input type="number" name="number" id="id_number" minlength="10" maxlength="10">
+    <input type="submit" value="signup">
+    </div>
+
+    {% else %}
+    <h3>sorry</h3>
+
+    {% endif%}
+
+</body>
+</html>

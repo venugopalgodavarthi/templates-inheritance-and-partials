@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome tio index page</h1>
+    {% for i in data %}
+        <h3>username is : {{i.0 | upper}}</h3>
+        <h3>username mobile no is : {{i.1}}</h3>
+        <h3>username age is : {{i.2}}</h3>
+        <h3>username address is : {{i.3 | title}}</h3>
+        <br>
+        <h3>username full name : {{i.0|length}}</h3>
+    {% endfor %}
+
+    <h3> word count is : {{d1 | wordcount }}</h3>
+    <h3> length of the string is : {{d1 | length}}</h3>
+    <h3> slicing  : {{d1 | slice:"-11:-5:-1" }}</h3>
+    <h3> join : {{d1 | join:" " }}</h3>
+    <h3> capfirst : {{d1 | capfirst }}</h3>
+    <h3> title : {{d1 | title }}</h3>
+
+
+
+    <h3> first data item in a list is :{{data|first}}</h3> 
+    <h3> last data item in a list is :{{data|last}}</h3> 
+    <h3> specific data item in a list is :{{data.2}}</h3> 
+    <h3> random data item in a list is :{{data|random}}</h3>
+    
+    <h3> unorderedlist: {{data| unordered_list }}
+
+
+
+</body>
+</html>

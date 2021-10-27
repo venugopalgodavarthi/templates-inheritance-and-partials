@@ -1,0 +1,58 @@
+"""whatsapp URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path,include
+from chats.views import welcome 
+from status.views import welcome
+from calls.views import sample
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',welcome,name="welcome"),
+    path('wel/',welcome,name="welcome"),
+    path('calls/',include('calls.urls')),
+    path('chats/',include('chats.urls')),
+    path('payment/',include('payment.urls')),
+    path('whatmeet/',include('whatmeet.urls')),
+]
+
+
+'''
+from django.contrib import admin
+from django.urls import path
+from chats import views as chats
+from status import views as status
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',chats.welcome,name="welcome"),
+    path('wel/',status.welcome,name="welcome")
+]
+
+
+
+
+from django.contrib import admin
+from django.urls import path
+from chats import views 
+chats=views
+from status import views 
+status=views
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('welcome/',chats.welcome,name="welcome"),
+    path('wel/',status.welcome,name="welcome")
+]
+
+'''
